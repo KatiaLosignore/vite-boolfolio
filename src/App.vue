@@ -9,9 +9,7 @@
     data() {
       return {
         projects: [],
-        contentMaxLength: 200,
         baseUrl: 'http://localhost:8000',
-
       }
     },
     methods: {
@@ -35,7 +33,7 @@
 </script>
 
 <template>
-  
+
   <AppHeader></AppHeader>
   <ProjectCard :cards="projects"></ProjectCard>
    
