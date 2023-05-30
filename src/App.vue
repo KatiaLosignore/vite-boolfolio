@@ -53,17 +53,12 @@
                         <h5 class="card-title">{{project.title}}</h5>
                         <h5>{{project.type?.name}}</h5>
                         <p class="card-text">{{truncateText(project.content)}}</p>
-                        <a href="#" class="btn btn-primary">Vedi post completo ... </a>
+                      
                     </div>
                 </div>
             </div>
 
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item"><button class="page-link" @click="getPosts(currentPage - 1)" :class="{'disabled' : currentPage == 1}">Previous</button></li>
-                    <li class="page-item"><button class="page-link" @click="getPosts(currentPage + 1)" :class="{'disabled' : currentPage == lastPage}">Next</button></li>
-                </ul>
-            </nav>
+           
             
         </div>
     </div>
