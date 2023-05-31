@@ -7,6 +7,10 @@
 
 
 <template>
-    <h1>Benvenuti, questa è la home page</h1>
+    <div class="container">
+        
+        <h1>Welcome, this is the home page</h1>
+
+    </div>
 </template>
 

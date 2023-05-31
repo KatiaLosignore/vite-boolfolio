@@ -7,7 +7,11 @@
 
 
 <template>
-    <h1>Qua ci va il form di contatto</h1>
+    <div class="container">
+        
+        <h1>This is the contact form</h1>
+
+    </div>
 </template>
 
 
