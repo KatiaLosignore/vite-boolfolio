@@ -27,17 +27,17 @@ export default {
 
 <template>
     <div class="container">
-        <div class="row">
+        <div class="row py-5">
             <div class="col-8">
-                <div class="card mt-4">
+                <div class="card rounded-5 bg-light">
                     
                     <div class="card-body text-center" v-if="project">
                         <h2 class="card-title text-center mb-3">{{project.title}}</h2>
-                        <h5 class="card-title text-center mb-3">{{ project.slug }}</h5>
-                        <h4 class="text-center mb-4">{{ project.type?.name }}</h4>
+                        <h5 class="card-title text-center mb-3">Slug: {{ project.slug }}</h5>
+                        <h4 class="text-center mb-4">Type: {{ project.type?.name }}</h4>
                         <img v-if="project.image" :src="`${this.store.baseUrl}/storage/${project.image}`" class="card-img-top">
                         <img v-else src="https://cdn.icon-icons.com/icons2/1462/PNG/512/120nophoto_100007.png" class="card-img-top"/>
-                        <h5 class="card-title mt-3">{{ project.link_project }}</h5>
+                        <h5 class="card-title mt-3">Link project: {{ project.link_project }}</h5>
                         <h5 class="card-title mt-3">{{ project.content }}</h5>
 
                     </div>
