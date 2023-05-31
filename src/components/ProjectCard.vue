@@ -1,11 +1,12 @@
 <script>
+import { store } from '../store.js';
 
 export default {
     name: 'ProjectCard',
 
     data() {
         return {
-            baseUrl: 'http://localhost:8000',
+            store,
             contentMaxLength: 200,
         }
     },
@@ -33,7 +34,7 @@ export default {
 
             <div class="col-4" v-for="card in cards">
                 <div class="card mt-5">
-                    <img v-if="card.image" :src="`${this.baseUrl}/storage/${card.image}`" class="card-img-top">
+                    <img v-if="card.image" :src="`${this.store.baseUrl}/storage/${card.image}`" class="card-img-top">
                     <img v-else src="https://cdn.icon-icons.com/icons2/1462/PNG/512/120nophoto_100007.png" class="card-img-top"/>
                     <div class="card-body">
                         <h5 class="card-title">{{card.title}}</h5>
