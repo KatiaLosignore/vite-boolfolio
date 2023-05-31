@@ -40,6 +40,10 @@ export default {
                         <h5 class="card-title">{{card.title}}</h5>
                         <h5>{{card.type?.name}}</h5>
                         <p class="card-text">{{truncateText(card.content)}}</p>
+
+                        <router-link :to="{name: 'single-project', params: {slug: card.slug}}" class="btn btn-primary">
+                            Vedi progetto completo
+                        </router-link>
                       
                     </div>
                 </div>

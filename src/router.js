@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import AppHome from './pages/AppHome.vue';
 import AppContact from './pages/AppContact.vue';
 import ProjectList from './pages/ProjectList.vue';
+import SingleProject from './pages/SingleProject.vue';
 
 
 const router = createRouter(
@@ -24,7 +25,11 @@ const router = createRouter(
                 name: 'projects',
                 component: ProjectList
             },
-            
+            {
+                path: '/blog/:slug',
+                name: 'single-project',
+                component: SingleProject
+            }
         ]
     }
 );
