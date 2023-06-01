@@ -5,7 +5,9 @@
 </script>
 
 <template>
+    <div class="container">
+   
+        <h1 class="text-danger">Pagina non trovata</h1>
 
-    <h1>Pagina non trovata</h1>
-    
+    </div>
 </template>
