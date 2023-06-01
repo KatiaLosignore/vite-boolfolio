@@ -40,11 +40,10 @@ export default {
                         <h5 class="card-title text-center mb-3">Slug: {{ project.slug }}</h5>
                         <h4 class="text-center mb-4">Type: {{ project.type?.name }}</h4>
                         <span v-for="technology in project.technologies" class="badge rounded-pill text-bg-primary me-2 mb-3">{{ technology.name }}</span>
-                        <img v-if="project.image" :src="`${this.store.baseUrl}/storage/${project.image}`" class="img-fluid">
-                        <img v-else src="https://cdn.icon-icons.com/icons2/1462/PNG/512/120nophoto_100007.png" class="img-fluid"/>
+                        <img v-if="project.image" :src="`${this.store.baseUrl}/storage/${project.image}`" class="card-img-top">
+                        <img v-else src="https://cdn.icon-icons.com/icons2/1462/PNG/512/120nophoto_100007.png" class="card-img-top"/>
                         <h5 class="card-title mt-3">Link project: {{ project.link_project }}</h5>
                         <h5 class="card-title mt-3">{{ project.content }}</h5>
-
                     </div>
                     <div v-else>
                         <img src="/loader.gif" alt="Caricamento in corso"/>
