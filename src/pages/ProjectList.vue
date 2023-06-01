@@ -12,6 +12,7 @@
             store,
             currentPage: 1,
             lastPage: null,
+            loading: true
         }
     },
     components: {
@@ -19,7 +20,7 @@
     },
     methods: {
       getProjects(gotoPage) {
-        // console.log('Ciao mondo!');
+        this.loading = true;
 
         axios.get(`${this.store.baseUrl}/api/projects`,
           {
@@ -33,6 +34,7 @@
           this.projects = response.data.results.data;
           this.currentPage = response.data.results.current_page;
           this.lastPage= response.data.results.last_page;
+          this.loading = false;
         })
       },
     },
@@ -46,8 +48,12 @@
 </script>
 
 <template>
-
-  <ProjectCard :cards="projects"></ProjectCard>
+   <div v-if="loading == false">
+    <ProjectCard :cards="projects"></ProjectCard>
+  </div>
+  <div v-else>
+    <img src="/loader.gif" alt="caricamento in corso..." />
+  </div>
 
   <nav aria-label="Page navigation example">
     <ul class="pagination ms-5">

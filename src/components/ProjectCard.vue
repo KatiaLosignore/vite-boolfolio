@@ -28,10 +28,8 @@ export default {
 
 
 <template>
-
     <div class="container">
         <div class="row">
-
             <div class="col-4" v-for="card in cards">
                 <div class="card mt-5">
                     <img v-if="card.image" :src="`${this.store.baseUrl}/storage/${card.image}`" class="card-img-top">
@@ -39,16 +37,17 @@ export default {
                     <div class="card-body">
                         <h5 class="card-title">{{card.title}}</h5>
                         <h5>{{card.type?.name}}</h5>
-                        <p class="card-text">{{truncateText(card.content)}}</p>
-
+                        <span v-for="technology in card.technologies" class="badge rounded-pill text-bg-primary me-2">{{ technology.name }}</span>
+                        <p class="card-text mt-3">{{truncateText(card.content)}}</p>
+        
                         <router-link :to="{name: 'single-project', params: {slug: card.slug}}" class="btn btn-primary">
                             Vedi progetto completo
                         </router-link>
-                      
+                              
                     </div>
                 </div>
-            </div>                      
+            </div>                   
         </div>
-    </div>    
-
+    </div>
+     
 </template>
