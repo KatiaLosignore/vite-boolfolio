@@ -58,6 +58,11 @@
   <nav aria-label="Page navigation example">
     <ul class="pagination ms-5">
       <li class="page-item"><button class="page-link" @click="getProjects(currentPage - 1)" :class="{'disabled' : currentPage == 1}">Previous</button></li>
+      
+      <li class="page-item" v-for="page in lastPage" :class="{'active': page==currentPage}">
+        <button @click="getProjects(page)" :class="{'page-link': true}">{{ page }}</button>
+      </li>
+
       <li class="page-item"><button class="page-link" @click="getProjects(currentPage + 1)" :class="{'disabled' : currentPage == lastPage}">Next</button></li>
     </ul>
   </nav>
