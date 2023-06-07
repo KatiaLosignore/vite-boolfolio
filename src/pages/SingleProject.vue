@@ -10,12 +10,13 @@ export default {
             project: null
         }
     },
-    mounted() {
-        const slug = this.$route.params.slug;
+    methods: {
+        getProject() {
+            const slug = this.$route.params.slug;
 
-        console.log("slug:" + slug);
+            console.log("slug:" + slug);
 
-        axios.get(`${this.store.baseUrl}/api/project/${slug}`)
+            axios.get(`${this.store.baseUrl}/api/project/${slug}`)
             .then(response => {
                 console.log(response);
                 if (response.data.success == true) {
@@ -25,9 +26,23 @@ export default {
                 }
             });
 
+        }
+    },
+    created() {
+        this.$watch(
+            () => this.$route.params,
+            (toParams, previousParams) => {
+                this.getProject();
+            }
+        )
+    },
+    mounted() {
+        this.getProject();
     }
+   
 }
 </script>
+
 
 <template>
     <div class="container">
@@ -44,6 +59,11 @@ export default {
                         <img v-else src="https://cdn.icon-icons.com/icons2/1462/PNG/512/120nophoto_100007.png" class="card-img-top"/>
                         <h5 class="card-title mt-3">Link project: {{ project.link_project }}</h5>
                         <h5 class="card-title mt-3">{{ project.content }}</h5>
+
+                        <router-link :to="{name: 'single-project', params: {slug: 'est-in-magnam'}}" class="btn btn-primary mt-3 mb-3">
+                             Vedi Post Est in magnam
+                        </router-link>
+
                     </div>
                     <div v-else>
                         <img src="/loader.gif" alt="Caricamento in corso"/>
