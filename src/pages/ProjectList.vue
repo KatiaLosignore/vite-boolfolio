@@ -48,24 +48,26 @@
 </script>
 
 <template>
-   <div v-if="loading == false">
-    <ProjectCard :cards="projects"></ProjectCard>
+  <div v-if="loading == false">
+      <ProjectCard :cards="projects"></ProjectCard>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination ms-5 mt-5">
+          <li class="page-item"><button class="page-link" @click="getProjects(currentPage - 1)" :class="{'disabled' : currentPage == 1}">Previous</button></li>
+          
+          <li class="page-item" v-for="page in lastPage" :class="{'active': page==currentPage}">
+            <button @click="getProjects(page)" :class="{'page-link': true}">{{ page }}</button>
+          </li>
+    
+          <li class="page-item"><button class="page-link" @click="getProjects(currentPage + 1)" :class="{'disabled' : currentPage == lastPage}">Next</button></li>
+        </ul>
+      </nav>
   </div>
+
   <div class="text-center mt-5" v-else>
     <img src="/loader.gif" alt="caricamento in corso..." />
   </div>
 
-  <nav aria-label="Page navigation example">
-    <ul class="pagination ms-5 mt-5">
-      <li class="page-item"><button class="page-link" @click="getProjects(currentPage - 1)" :class="{'disabled' : currentPage == 1}">Previous</button></li>
-      
-      <li class="page-item" v-for="page in lastPage" :class="{'active': page==currentPage}">
-        <button @click="getProjects(page)" :class="{'page-link': true}">{{ page }}</button>
-      </li>
-
-      <li class="page-item"><button class="page-link" @click="getProjects(currentPage + 1)" :class="{'disabled' : currentPage == lastPage}">Next</button></li>
-    </ul>
-  </nav>
    
 </template>
 
