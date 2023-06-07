@@ -61,7 +61,7 @@ export default {
                         <h5 class="card-title mt-3">{{ project.content }}</h5>
 
                         <router-link :to="{name: 'single-project', params: {slug: 'est-in-magnam'}}" class="btn btn-primary mt-3 mb-3">
-                             Vedi Post Est in magnam
+                             Vedi progetto Est in magnam
                         </router-link>
 
                     </div>
