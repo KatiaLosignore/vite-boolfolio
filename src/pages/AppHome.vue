@@ -9,7 +9,7 @@
 <template>
     <div class="container">
         
-        <h1>Welcome, this is the home page</h1>
+        <h1 class="mt-5 text-center">Benvenuti, questa è la Home Page</h1>
 
     </div>
 </template>
