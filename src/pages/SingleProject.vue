@@ -48,9 +48,9 @@ export default {
     <div class="container">
         <div class="row py-5">
             <div class="col-8">
-                <div class="card rounded-5 bg-light">
+                <div class="card rounded-5 bg-info-subtle">
                     
-                    <div class="card-body text-center" v-if="project">
+                    <div class="card-body text-center card-single" v-if="project">
                         <h2 class="card-title text-center mb-3">{{project.title}}</h2>
                         <h5 class="card-title text-center mb-3">Slug: {{ project.slug }}</h5>
                         <h4 class="text-center mb-4">Type: {{ project.type?.name }}</h4>
@@ -60,7 +60,7 @@ export default {
                         <h5 class="card-title mt-3">Link project: {{ project.link_project }}</h5>
                         <h5 class="card-title mt-3">{{ project.content }}</h5>
 
-                        <router-link :to="{name: 'single-project', params: {slug: 'est-in-magnam'}}" class="btn btn-primary mt-3 mb-3">
+                        <router-link :to="{name: 'single-project', params: {slug: 'est-in-magnam'}}" class="btn btn-primary mt-3 mb-5">
                              Vedi progetto Est in magnam
                         </router-link>
 
