@@ -51,7 +51,7 @@
    <div v-if="loading == false">
     <ProjectCard :cards="projects"></ProjectCard>
   </div>
-  <div v-else>
+  <div class="text-center mt-5" v-else>
     <img src="/loader.gif" alt="caricamento in corso..." />
   </div>
 

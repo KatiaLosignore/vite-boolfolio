@@ -65,7 +65,7 @@ export default {
                         </router-link>
 
                     </div>
-                    <div v-else>
+                    <div class="text-center mt-2" v-else>
                         <img src="/loader.gif" alt="Caricamento in corso"/>
                     </div>
                 </div>
